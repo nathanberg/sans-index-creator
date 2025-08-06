@@ -15,6 +15,10 @@ Please note that the -n field is used to split the txt into pages, as we use the
 If your course has multiple books, you can combine the indexes created by `sans_indexer.py` into one index with the following command:
 `python index_combiner.py index1.txt index2.txt index3.txt > combined_index.txt`. This will create an index which displays both book number and page number of each keyword.
 
+If you need an Excel spreadsheet that can be used with the GIAC-Index-Creator project, convert the combined index into an xlsx file:
+  `python index_to_excel.py combined_index.txt giac_index.xlsx`
+The generated spreadsheet contains four columns (Topic, Description, Page, Book) as expected by GIAC-Index-Creator.
+
 ## How Does it Work?
 For something to be counted as a "word" (and therefore added to the index), it has to meet certain criteria:
 * At least 3 chars once certain characters/phrases are stripped from it
